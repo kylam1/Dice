@@ -1,3 +1,4 @@
+//WORK IN CLASS: Make game where if you roll high enough, smiley face -- otherwise sad face. Same for average roll!
 Die clown;
 int meR; int meG; int meB; int oldR; int oldG; int oldB;
 float leverY;
@@ -68,7 +69,7 @@ void draw()
     leverY = 987.5;
   //System.out.println(leverY);
   ellipse(587.5, leverY, 25, 25);
-  limitX += (((int)leverY-712)/35)*10; 
+  limitX += (((int)leverY-712)/40)*10; 
   maxX += (((int)leverY-712)/40)*10;
 
 //TEXT
@@ -102,8 +103,8 @@ void draw()
   change+=25;
   multiplier++;
   minX += 25;
-  for (int myY = 600 + (((int)leverY-712)/3); myY <= 1100 + (((int)leverY-712)/3); myY += 50 + (((int)leverY-712)/35)) {
-    for (myX = 50*multiplier - (((int)leverY-712)/35); myX >= minX && myX <= limitX; myX += 50 + (((int)leverY-712)/35)) {
+  for (int myY = 600 + (((int)leverY-712)/3); myY <= 1100 + (((int)leverY-712)/3); myY += 50 + (((int)leverY-712)/40)) {
+    for (myX = 50*multiplier - (((int)leverY-712)/40); myX >= minX && myX <= limitX; myX += 50 + (((int)leverY-712)/40)) {
       clown = new Die(myX-change,myY-45, r, g, b);
       clown.roll();
       clown.show();
