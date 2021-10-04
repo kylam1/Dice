@@ -3,7 +3,7 @@ Die clown;
 int meR; int meG; int meB; int oldR; int oldG; int oldB;
 float leverY;
 int sum; int mySum;
-String total; int timesRolled; int totalSum; String avg; String numRolls;
+String total; int timesRolled; int totalSum; int avrg; String avg; String numRolls;
   
 void setup()
 {
@@ -138,7 +138,8 @@ void mouseReleased()
   mySum = sum;
   totalSum += mySum;
   total = "Your roll is: " + mySum;
-  avg = "Your average roll is: " + totalSum / timesRolled;
+  avrg = totalSum/timesRolled;
+  avg = "Your average roll is: " + avrg;
   numRolls = "You've rolled " + timesRolled + " times"; 
   //System.out.println(total);
   if(leverY >= 773) {
