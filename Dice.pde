@@ -68,7 +68,7 @@ void draw()
     leverY = 987.5;
   //System.out.println(leverY);
   ellipse(587.5, leverY, 25, 25);
-  limitX += (((int)leverY-712)/35)*9; 
+  limitX += (((int)leverY-712)/35)*10; 
   maxX += (((int)leverY-712)/40)*10;
 
 //TEXT
