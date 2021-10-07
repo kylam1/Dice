@@ -1,4 +1,3 @@
-//WORK IN CLASS: Make game where if you roll high enough, smiley face -- otherwise sad face. Same for average roll!
 Die clown;
 int meR; int meG; int meB; int oldR; int oldG; int oldB;
 float leverY;
@@ -160,7 +159,34 @@ void mouseReleased()
     text(avg, 290, 515);
     text(numRolls, 300, 600);
   }
+  face(550,200);
   redraw();
+}
+
+void face(int smileX, int smileY)
+{
+  fill(255,255,50);
+  strokeWeight(1);
+  stroke(255);
+  ellipse(smileX, smileY, 90, 90);
+  noStroke();
+  fill(0);
+  ellipse(smileX-15, smileY-20, 15, 15);
+  ellipse(smileX+15, smileY-20, 15, 15);
+  if(sum >= 430) {
+    beginShape();
+      curveVertex(smileX-40, smileY);
+      curveVertex(smileX-20, smileY+20);
+      curveVertex(smileX, smileY+30);
+      curveVertex(smileX+20, smileY+20);
+      curveVertex(smileX+40, smileY);
+    endShape();
+  }
+  else {
+    strokeWeight(5);
+    curve(smileX-50, smileY+50, smileX-30, smileY+20, smileX+25, smileY+10, smileX+40, smileY+100);
+    noStroke();
+  }
 }
 
 class Die //models one single dice cube
